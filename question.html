@@ -67,13 +67,15 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Nota</th>
+                    <th>Avaliação</th>
+                    <th>Observação</th>
                 </tr>
             </thead>
             <tbody>
-
+                
             </tbody>
         </table>
+        <button type="button" class="btn btn-lg btn-success">Salvar</button>
     </section>
     <script>
         const question = $('#questionario');
@@ -96,6 +98,7 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </td>
+                    <td><input class="form-control inp" type="text" name="input-text" id="input-text-${item}"></td>
                 </tr>
                 `;
             tableName.append(template);
@@ -144,43 +147,43 @@
         let buttons = question.find('.carousel-question .btn-link');
 
         const Questions = [{
-            question: 'Qual nota você dá, de 1 a 5, para os membros da equipe no quesito respeito com os colegas, independente da hierarquia?',
+            question: 'Qual avaliação você dá para os membros da equipe no quesito respeito com os colegas, independente da hierarquia',
             id: 1
         }, {
             question: 'O colaborador causa conflitos entre os colegas de equipe?',
             id: 1
         }, {
-            question: 'De 1 a 5, quão conciliador os membros da equipe são nos conflitos que podem surgir entre os colegas de equipe?',
+            question: 'Quão conciliadores os membros da equipe são nos conflitos que podem surgir',
             id: 1
         }, {
-            question: 'De 1 a 5, o quanto você enxerga os membros da equipe como uma referência positiva para os outros membros da equipe.',
+            question: 'O quanto você enxerga os membros da equipe como uma referência positiva para os outros membros da equipe.',
             id: 1
         }, {
-            question: 'De 1 a 5, qual a nota que você dá para o colega x para a atuação nas atividades da equipe?',
+            question: 'Qual a avaliação que você dá para o colega x para a atuação nas atividades da equipe?',
             id: 1
         }, {
-            question: 'De 1 a 5, o quanto colaborativo você considera os membros da equipe? (Ou seja, o colega presta ajuda a outros membros da equipe, mesmo que essa ajuda não seja considerada em suas metas individuais)',
+            question: 'O quão colaborativo você considera os membros da equipe? (Ou seja, o colega presta ajuda a outros membros da equipe, mesmo que essa ajuda não seja considerada em suas metas individuais)',
             id: 1
         }, {
-            question: 'Em uma escala de 1 a 5, qual nota você dá para cada membro da equipe no quesito técnico?',
+            question: 'Qual avaliação você dá para cada membro da equipe no quesito técnico?',
             id: 2
         }, {
-            question: 'Em uma escala de 1 a 5, o quanto você considera que seus colegas agem de maneira crítica em relação às atividades propostas ou realizadas?',
+            question: 'Em uma escala O quanto você considera que seus colegas agem de maneira crítica em relação às atividades propostas ou realizadas?',
             id: 2
         }, {
-            question: 'Em uma escala de 1 a 5, o quanto você considera seu colega engajado com os projetos que ele participa e com os objetivos da organização?',
+            question: 'O quanto você considera seu colega engajado com os projetos que ele participa e com os objetivos da organização?',
             id: 2
         }, {
-            question: 'Em uma escala de 1 a 5, o quanto você considera seus colegas inovadores.?',
+            question: 'O quanto você considera seus colegas inovadores.?',
             id: 2
         }, {
-            question: 'Em uma escala de 1 a 5, o quanto você considera que seus colegas conseguem evitar que conflitos e outras questões pessoais com outros colegas influenciem negativamente sua atuação profissional?',
+            question: 'O quanto você considera que seus colegas conseguem evitar que conflitos e outras questões pessoais com outros colegas influenciem negativamente sua atuação profissional?',
             id: 2
         }, {
-            question: 'Em uma escala de 1 a 5, o quanto você considera que seus colegas evitam privilegiar trabalhos/ajuda para pessoas com quem possui maior afinidade.',
+            question: 'O quanto você considera que seus colegas evitam privilegiar trabalhos/ajuda para pessoas com quem possui maior afinidade.',
             id: 2
         }, {
-            question: 'De 1 a 5, sendo 1 muito curta, 3 ideal e 5 muito extensa, qual a nota que você dá para a duração da pesquisa?',
+            question: 'De 1 a 5, sendo 1 muito curta, 3 ideal e 5 muito extensa, qual a avaliação que você dá para a duração da pesquisa?',
             id: 3
         }, {
             question: 'De 1 a 5, sendo 1 pouco relevante e 5 muito relevante, como você classifica a importância da pesquisa?',
@@ -192,31 +195,31 @@
             question: 'Você tem alguma outra pergunta ou ponto de atenção interessante para ser adicionado/relatado à pesquisa?',
             id: 3
         }, {
-            question: 'Em uma escala de 1 a 5, o quanto você considera que a gestão age de maneira tempestiva a fim de mediar conflitos e reparar eventuais injustiças?',
+            question: 'O quanto você considera que a gestão age de maneira tempestiva a fim de mediar conflitos e reparar eventuais injustiças?',
             id: 4
         }, {
-            question: 'Em uma escala de 1 a 5, o quanto você considera efetivas as ações da gestão no que diz respeito a zelar por um bom clima da equipe?',
+            question: 'O quanto você considera efetivas as ações da gestão no que diz respeito a zelar por um bom clima da equipe?',
             id: 4
         }, {
-            question: 'Em uma escala de 1 a 5, quanto que você considera que a gestão contribui para um clima melhor na equipe?',
+            question: 'Quanto que você considera que a gestão contribui para um clima melhor na equipe?',
             id: 4
         }, {
-            question: 'Em uma escala de 1 a 5, o quanto você considera que a gestão trata seus membros de maneira igual, independente de cargo ou afinidade pessoal?',
+            question: 'O quanto você considera que a gestão trata seus membros de maneira igual, independente de cargo ou afinidade pessoal?',
             id: 4
         }, {
-            question: 'Em uma escala de 1 a 5, o quanto você considera que as ações da gestão prejudicam o andamento dos projetos?',
+            question: 'O quanto você considera que as ações da gestão prejudicam o andamento dos projetos?',
             id: 4
         }, {
-            question: 'Em uma escala de 1 a 5, o quanto você considera que a gestão incentiva os colaboradores a propor e executar novas ideias, ser inovador?',
+            question: 'O quanto você considera que a gestão incentiva os colaboradores a propor e executar novas ideias, ser inovador?',
             id: 4
         }, {
-            question: 'Em uma escala de 1 a 5, o quanto você considera que a gestão consegue aprender com os erros ?',
+            question: 'O quanto você considera que a gestão consegue aprender com os erros ?',
             id: 4
         }, {
             question: 'Em uma escala de 1 a 5, avalie o quanto satisfatórias você considera as ações da gestão perante a situações adversas?',
             id: 4
         }, {
-            question: 'Em uma escala de 1 a 5, o quanto você considera que a cobrança vinda da gestão é saudável e respeitosa.',
+            question: 'O quanto você considera que a cobrança vinda da gestão é saudável e respeitosa.',
             id: 4
         }];
 
@@ -246,6 +249,7 @@
         tabCont.find('.tab-pane:first-child').addClass('show active');
 
         let tableStar = $('.table .atualizar .stars');
+        let inputs = $('.inp')
 
         buttons.on('click', function () {
             let item = $(this).siblings('.wrap').find('.jumbotron').find('.active');
@@ -264,10 +268,11 @@
                         item.siblings('p:first').addClass('active');
                     } else {
                         item.next().addClass('active');
-                    }
+                    }                    
                     break;
             }
             tableStar.find('i').removeClass('active-click');
+            inputs.val("");
         });
 
         tableStar.find('i').on('mouseover', function () {
